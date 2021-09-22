@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "api": "json-server ./src/services/server.json --host 192.168.1.8 --port 3333 --delay 700"
   },
   "dependencies": {
     "@expo-google-fonts/archivo": "^0.2.0",
@@ -14,6 +15,8 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@react-navigation/stack": "^6.0.7",
+    "axios": "^0.21.4",
+    "date-fns": "^2.24.0",
     "expo": "~41.0.1",
     "expo-app-loading": "^1.1.2",
     "expo-font": "~9.1.0",
