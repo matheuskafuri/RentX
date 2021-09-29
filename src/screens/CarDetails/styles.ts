@@ -12,6 +12,7 @@ export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 
   position: absolute;
   margin-top: ${getStatusBarHeight() + RFValue(18)}px;

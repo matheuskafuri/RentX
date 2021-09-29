@@ -3,7 +3,9 @@ import { StatusBar, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 
+import { useTheme } from 'styled-components';
 
+import { LoadAnimation } from '../../components/LoadAnimation';
 import { Car } from '../../components/Car';
 import { CarDTO } from '../../dtos/CarDTO';
 import { api } from '../../services/api';
@@ -25,8 +27,7 @@ import {
   CarFooterPeriod,
   CarFooterDate,
 } from './styles';
-import { useTheme } from 'styled-components';
-import { Load } from '../../components/Load';
+
 
 interface CarProps {
   id: string;
@@ -84,7 +85,7 @@ export function MyCars() {
           Controle, segurança e praticidade.
         </Subtitle>
       </Header>
-      {loading ? <Load /> :
+      {loading ? <LoadAnimation /> :
         <Content>
           <Appointments>
             <AppointmentsTitle>Agendamentos realizados</AppointmentsTitle>
@@ -106,7 +107,7 @@ export function MyCars() {
                       name="arrowright"
                       size={20}
                       color={theme.colors.text}
-                    // style={{ marginHorizontal: 10 }}
+                      style={{ marginHorizontal: 10 }}
                     />
                     <CarFooterDate>{item.endDate}</CarFooterDate>
                   </CarFooterPeriod>

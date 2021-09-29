@@ -4,10 +4,11 @@ import { useTheme } from 'styled-components';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-import Animated, { 
-  useSharedValue, 
+
+import Animated, {
+  useSharedValue,
   useAnimatedScrollHandler,
-  useAnimatedStyle, 
+  useAnimatedStyle,
   interpolate,
   Extrapolate
 } from 'react-native-reanimated';
@@ -86,16 +87,17 @@ export function CarDetails() {
 
   return (
     <Container>
-      <StatusBar 
+      <StatusBar
         barStyle="dark-content"
         translucent
         backgroundColor="transparent"
       />
+      
       <Animated.View
         style={[
           headerStyleAnimation,
           styles.header,
-          { backgroundColor: theme.colors.background_secondary}
+          { backgroundColor: theme.colors.background_secondary }
         ]}
       >
         <Header>
@@ -104,7 +106,7 @@ export function CarDetails() {
 
         <Animated.View style={sliderCarsStyleAnimation}>
           <CarImages>
-            <ImageSlider 
+            <ImageSlider
               imagesUrl={car.photos}
             />
           </CarImages>
@@ -135,10 +137,10 @@ export function CarDetails() {
         <Accessories>
           {
             car.accessories.map(accessory => (
-              <Accessory 
+              <Accessory
                 key={accessory.type}
                 name={accessory.name}
-                icon={getAccessoryIcon(accessory.type)} 
+                icon={getAccessoryIcon(accessory.type)}
               />
             ))
           }
@@ -154,7 +156,7 @@ export function CarDetails() {
       </Animated.ScrollView>
 
       <Footer>
-        <Button title="Escolher período do aluguel" onPress={handleConfirmRental}/>
+        <Button title="Escolher período do aluguel" onPress={handleConfirmRental} />
       </Footer>
 
     </Container>
